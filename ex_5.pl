@@ -18,8 +18,8 @@ soma([X|Xs],S):-soma(Xs,U),S is X+U.
 
 %5.4
 max([X],X):-!.
-max([X|Xs],X):-max(Xs,U),X>U.
-max([X|Xs],U):-max(Xs,U),X<U.
+max([X|Xs],X):-max(Xs,U),!,X>U.
+max([X|Xs],U):-max(Xs,U),!,X<U.
 
 %5.5
 inv([],[]).
