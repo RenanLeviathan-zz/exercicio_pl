@@ -58,4 +58,6 @@ rota(A,B,[R|R1]):-estrada(R,A,C),rota(C,B,R1).
 
 %5.9
 %a)
-regular(retangulo(ponto(0,2),ponto(2,2),ponto(0,4),ponto(2,4))).
+r3(p(0,0),p(1,0),p(1,4),p(0,3)).
+regular(p(X,Y),p(X1,Y),p(X1,Y1),p(X,Y1)).
+quadrado(p(X,Y),p(X1,Y1),p(X2,Y2),p(X3,Y3)):-regular(p(X,Y),p(X1,Y1),p(X2,Y2),p(X3,Y3)),abs(X-X1)=abs(Y-Y3).
