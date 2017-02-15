@@ -18,7 +18,7 @@ soma([X|Xs],S):-soma(Xs,U),S is X+U.
 
 %5.4
 max([X],X):-!.
-max([X|Xs],X):-max(Xs,U),X>U,!.
+max([X|Xs],X):-max(Xs,U),X>=U,!.
 max([X|Xs],U):-max(Xs,U),X<U,!.
 
 %5.5
@@ -53,8 +53,8 @@ estrada(6,c,f).
 estrada(7,d,f).
 estrada(8,e,f).
 %b)
-rota(A,B,R):-estrada(_,A,B),R=[A,B].
-rota(A,B,R):-estrada(_,A,C),rota(C,B,S),R=[A,B,C|S].
+rota(A,B,[R]):-estrada(R,A,B).
+rota(A,B,[R|R1]):-estrada(R,A,C),rota(C,B,R1).
 
 %5.9
 %a)
